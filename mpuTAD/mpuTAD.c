@@ -14,7 +14,7 @@ struct mpuTAD
     signed short int rx;
     signed short int ry;
     signed short int rz;
-    unsigned short int configuracao_aceleracao;
+    unsigned short int sensibilidade_aceleracao;
     unsigned short int configuracao_rotacao;
 }
 
@@ -40,5 +40,5 @@ void apagar_mpuTAD(mpuTAD *mpu)
 
 void configurar_aceleracao(mpuTAD mpu, unsigned short int sensibilidade_aceleracao)
 {
-    
+    mpu->sensibilidade_aceleracao = 
 }
