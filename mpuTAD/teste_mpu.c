@@ -13,11 +13,10 @@ int main(void)
     calcular_aceleracao(mpu);
     calcular_rotacao(mpu);
 
-    printf("Teste de criação MPU:\n
-    Aceleração final: %f, %f, %f\n
-    Rotação final: %f, %f, %f\n", 
+    printf("Teste de criação MPU:\nAceleração final: %f, %f, %f\nRotação final: %f, %f, %f\n", 
     aceleracao_final_x(mpu), aceleracao_final_y(mpu), aceleracao_final_z(mpu),
     rotacao_final_x(mpu), rotacao_final_y(mpu), rotacao_final_z(mpu));
 
     apagar_mpuTAD(&mpu);
+    return 0;
 }

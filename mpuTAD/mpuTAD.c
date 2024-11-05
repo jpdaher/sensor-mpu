@@ -4,7 +4,7 @@
  * Este arquivo implementa a interface mpuTAD.h
  */
 
-#import "mpuTAD.h"
+#include "mpuTAD.h"
 
 struct st_mpuTAD
 {
@@ -22,11 +22,11 @@ struct st_mpuTAD
     float rx_final;
     float ry_final;
     float rz_final;
-}
+};
 
-mpuTAD criar_mpuTAD();
+mpuTAD criar_mpuTAD()
 {
-    mpuTAD mpu = calloc(sizeof(struct mpuTAD));
+    mpuTAD mpu = malloc(sizeof(struct st_mpuTAD));
     
     return mpu;
 }
@@ -58,7 +58,7 @@ float aceleracao_bruta_x(mpuTAD mpu)
     return mpu->ax;
 }
 
-float acelecacao_bruta_y(mpuTAD mpu)
+float aceleracao_bruta_y(mpuTAD mpu)
 {
     return mpu->ay;
 }
@@ -139,30 +139,30 @@ void calcular_rotacao(mpuTAD mpu)
 
 float aceleracao_final_x(mpuTAD mpu)
 {
-    return mpu->ax;
+    return mpu->ax_final;
 }
 
-float acelecacao_final_y(mpuTAD mpu)
+float aceleracao_final_y(mpuTAD mpu)
 {
-    return mpu->ay;
+    return mpu->ay_final;
 }
 
 float aceleracao_final_z(mpuTAD mpu)
 {
-    return mpu->az;
+    return mpu->az_final;
 }
 
 float rotacao_final_x(mpuTAD mpu)
 {
-    return mpu->rx;
+    return mpu->rx_final;
 }
 
 float rotacao_final_y(mpuTAD mpu)
 {
-    return mpu->ry;
+    return mpu->ry_final;
 }
 
 float rotacao_final_z(mpuTAD mpu)
 {
-    return mpu->rz;
+    return mpu->rz_final;
 }
