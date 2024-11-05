@@ -28,19 +28,16 @@ typedef struct st_mpuTAD *mpuTAD;
 
 /**
  * FUNÇÃO: criar_mpuTAD
- * Uso: criar_mpuTAD(ax, ay, az, rx, ry, rz);
+ * Uso: criar_mpuTAD();
  * ------------------------------------------
- * Esta função recebe seis valores inteiros, ax, ay, az, rx, ry e rz, que
- * representam, respectivamente, os valores brutos de aceleração nos eixos x,
- * y e z, e de rotação nos eixos x, y e z de um sensor MPU, e retorna um
- * ponteiro para um mpuTAD.
+ * Esta função retorna um ponteiro para um mpuTAD, que deve ser armazenado em
+ * uma variável.
  * 
  * Se criado, um mpuTAD precisa ser apagado com o procedimento "apagar_mpuTAD"
  * antes do final do programa
  */
 
-mpuTAD criar_mpuTAD(signed short int ax, signed short int ay, signed short int az
-                    signed short int rx, signed short int ry, signed short int rz);
+mpuTAD criar_mpuTAD();
 
 void apagar_mpuTAD(mpuTAD *mpu);
 
@@ -52,20 +49,45 @@ unsigned short int recuperar_configuracao_aceleracao(mpuTAD mpu);
 
 unsigned short int recuperar_configuracao_rotacao(mpuTAD mpu);
 
-void inserir_aceleracao_bruta(mpuTAD mpu, signed short int ax, signed short int ay,
-                              signed short int az);
+void inserir_aceleracao_bruta(mpuTAD mpu, float ax, float ay, float az);
 
-void inserir_rotacao_bruta(mpuTAD mpu, signed short int rx, signed short int ry,
-                           signed short int rz);
+void inserir_rotacao_bruta(mpuTAD mpu, float rx, float ry, float rz);
 
-signed short int recuperar_aceleracao_bruta(mpuTAD mpu);
+float aceleracao_bruta_x(mpuTAD mpu);
 
-signed short int recuperar_rotacao_bruta(mpuTAD mpu);
+float aceleracao_bruta_y(mpuTAD mpu);
 
-signed short int recuperar_aceleracao_final(mpuTAD mpu);
+float aceleracao_bruta_z(mpuTAD mpu);
 
-signed short int recuperar_rotacao_final(mpuTAD mpu);
+float rotacao_bruta_x(mpuTAD mpu);
 
+float rotacao_bruta_y(mpuTAD mpu);
+
+float rotacao_bruta_z(mpuTAD mpu);
+
+void configurar_aceleracao(mpuTAD mpu, unsigned short int sensibilidade_aceleracao);
+
+void configurar_rotacao(mpuTAD mpu, unsigned short int sensibilidade_rotacao);
+
+unsigned short int recuperar_configuracao_aceleracao(mpuTAD mpu);
+
+unsigned short int recuperar_configuracao_rotacao(mpuTAD mpu);
+
+void calcular_aceleracao(mpuTAD mpu);
+
+void calcular_rotacao(mpuTAD mpu);
+
+float aceleracao_final_x(mpuTAD mpu);
+
+float aceleracao_final_y(mpuTAD mpu);
+
+float aceleracao_final_z(mpuTAD mpu);
+
+float rotacao_final_x(mpuTAD mpu);
+
+float rotacao_final_y(mpuTAD mpu);
+
+float rotacao_final_z(mpuTAD mpu);
 
 /* Fim da diretiva: */
 
