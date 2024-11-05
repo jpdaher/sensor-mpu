@@ -93,6 +93,16 @@ void configurar_rotacao(mpuTAD mpu, unsigned short int sensibilidade_rotacao)
     mpu->sensibilidade_rotacao = sensibilidade_rotacao;
 }
 
+unsigned short int recuperar_configuracao_aceleracao(mpuTAD mpu)
+{
+    return mpu->sensibilidade_aceleracao;
+}
+
+unsigned short int recuperar_configuracao_rotacao(mpuTAD mpu)
+{
+    return mpu->sensibilidade_rotacao;
+}
+
 void calcular_aceleracao(mpuTAD mpu)
 {
    signed short int fator_escala;
