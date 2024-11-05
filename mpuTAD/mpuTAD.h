@@ -65,10 +65,6 @@ float rotacao_bruta_y(mpuTAD mpu);
 
 float rotacao_bruta_z(mpuTAD mpu);
 
-void configurar_aceleracao(mpuTAD mpu, unsigned short int sensibilidade_aceleracao);
-
-void configurar_rotacao(mpuTAD mpu, unsigned short int sensibilidade_rotacao);
-
 unsigned short int recuperar_configuracao_aceleracao(mpuTAD mpu);
 
 unsigned short int recuperar_configuracao_rotacao(mpuTAD mpu);
